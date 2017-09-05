@@ -1,0 +1,13 @@
+<div class="text-center">
+  <h1>TASKS LIST</h1>
+
+
+    <% @tasks.each do |task| %>
+
+        <h4><%= link_to task.name, task_path(task) %></h4>
+        <p><%= task.description %> | <%= link_to 'delete', task_path(task), method: :delete, data: {confirm: 'Are you sure?'} %> | <%= link_to 'update', edit_task_path(task) %></p>
+    <% end %>
+
+  <div class="btn btn-primary"><%= link_to 'Create a new task', new_task_path %></div>
+
+</div>
